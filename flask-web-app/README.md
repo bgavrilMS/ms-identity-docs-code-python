@@ -10,12 +10,12 @@ urlFragment: ms-identity-python-webapp
 # Integrating Microsoft Entra ID with a Python web application written in Flask
 
 This is a multi-purpose [Flask](https://flask.palletsprojects.com/en/3.0.x/) web app sample.
-Write your app like this once, and the same implementation will support 4x2=8 scenarios.
+The same implementation supports Microsoft Entra ID, External ID, and External ID with a custom domain.
 
-|                | Microsoft Entra ID | External ID | External ID with Custom Domain | Azure Active Directory B2C |
-|----------------|--------------------|-------------|--------------------------------|--------------|
-| Web App Sign-In & Sign-Out |   ✓    |      ✓      |                ✓               |       ✓      |
-| Web App Calls a web API |     ✓     |      ✓      |                ✓               |       ✓      |
+|                | Microsoft Entra ID | External ID | External ID with Custom Domain |
+|----------------|--------------------|-------------|--------------------------------|
+| Web App Sign-In & Sign-Out |   ✓    |      ✓      |                ✓               |
+| Web App Calls a web API |     ✓     |      ✓      |                ✓               |
 
 ![Topology](https://raw.githubusercontent.com/Azure-Samples/ms-identity-python-webapp-django/main/static/topology.png)
 
@@ -41,7 +41,6 @@ Write your app like this once, and the same implementation will support 4x2=8 sc
     <th>Microsoft Entra ID</th>
     <th>Microsoft Entra External ID</th>
     <th>Microsoft Entra External ID with Custom Domain</th>
-    <th>Azure Active Directory B2C</th>
   </tr>
 
   <tr>
@@ -60,12 +59,6 @@ Follow only the page 1 of this [Tutorial: Prepare your customer tenant ...](http
     <td>
 
 Coming soon.
-
-</td>
-    <td>
-
-Following only the step 1 and 2 (including 2.1 and 2.2) of this
-[Configure authentication in a sample Python web app by using Azure Active Directory B2C](https://learn.microsoft.com/azure/active-directory-b2c/configure-authentication-sample-python-web-app?tabs=linux)
 
 </td>
   </tr>
@@ -90,16 +83,10 @@ Copy this [External ID with Custom Domain template](.env.sample.external-id-cust
 as `.env` and then modify `.env` with your app's settings.
 
 </td>
-    <td>
-
-Copy this [Azure Active Directory B2C template](.env.sample.b2c)
-as `.env` and then modify `.env` with your app's settings.
-
-</td>
   </tr>
 
   <tr>
-    <td colspan=4>
+    <td colspan=3>
 
 Do not reverse the order of the configuration steps above.
 If you put your app credentials into the template and then copy it into `.env`,
@@ -110,7 +97,7 @@ you risk accidentally committing your templates with credentials into Version Co
 
   <tr>
     <th>Web App Sign In & Sign Out</th>
-    <td colspan=4>
+    <td colspan=3>
 
 With the basic configuration above,
 you can now browse to the index page of this sample to try the sign-in/sign-out experience.
@@ -120,7 +107,7 @@ you can now browse to the index page of this sample to try the sign-in/sign-out 
 
   <tr>
     <th>Web App Calls a web API</th>
-    <td colspan=4>
+    <td colspan=3>
 
 Add the web API's *endpoint* into your `.env` file.
 Also add the *scopes* it needs, separated by space.
@@ -144,7 +131,7 @@ Deploy to
 [Azure App Service](https://azure.microsoft.com/en-us/products/app-service)
 
 </th>
-    <td colspan=4>
+    <td colspan=3>
 
 * Follow the ["Quickstart: Deploy a Python (Django or Flask) web app to Azure App Service"](https://learn.microsoft.com/en-us/azure/app-service/quickstart-python),
   but replace its sample app (which does not do user sign-in) with this web app.

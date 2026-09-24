@@ -13,7 +13,6 @@ __version__ = "0.5.0"
 def index(request, *, context):
     return render(request, 'index.html', dict(
         user=context['user'],
-        edit_profile_url=settings.AUTH.get_edit_profile_url(),
         api_endpoint=os.getenv("ENDPOINT"),
         title=f"Microsoft Entra ID Django Web App Sample v{__version__}",
     ))
@@ -29,4 +28,3 @@ def call_api(request, *, context):
         "title": "Result of API call",
         "content": json.dumps(api_result, indent=4),
     })
-

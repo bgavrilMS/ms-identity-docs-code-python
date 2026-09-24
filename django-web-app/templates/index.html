@@ -19,12 +19,7 @@
       <li><a href='/call_api'>Call an API</a></li>
     {% endif %}
 
-    {% if edit_profile_url %}
-      <li><a href='{{ edit_profile_url }}'>Edit Profile</a></li>
-    {% endif %}
-
     <li><a href="{% url 'identity.logout' %}">Logout</a></li>
     </ul>
 </body>
 </html>
-

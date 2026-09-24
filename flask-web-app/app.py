@@ -15,10 +15,6 @@ auth = Auth(
     client_credential=os.getenv("CLIENT_SECRET"),
     redirect_uri=os.getenv("REDIRECT_URI"),
     oidc_authority=os.getenv("OIDC_AUTHORITY"),
-    b2c_tenant_name=os.getenv('B2C_TENANT_NAME'),
-    b2c_signup_signin_user_flow=os.getenv('SIGNUPSIGNIN_USER_FLOW'),
-    b2c_edit_profile_user_flow=os.getenv('EDITPROFILE_USER_FLOW'),
-    b2c_reset_password_user_flow=os.getenv('RESETPASSWORD_USER_FLOW'),
 )
 
 @app.route("/")
@@ -27,7 +23,6 @@ def index(*, context):
     return render_template(
         'index.html',
         user=context['user'],
-        edit_profile_url=auth.get_edit_profile_url(),
         api_endpoint=os.getenv("ENDPOINT"),
         title=f"Flask Web App Sample v{__version__}",
     )
@@ -41,4 +36,3 @@ def call_downstream_api(*, context):
         timeout=30,
     ).json() if context.get('access_token') else "Did you forget to set the SCOPE environment variable?"
     return render_template('display.html', title="API Response", result=api_result)
-
