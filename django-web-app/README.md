@@ -160,3 +160,7 @@ For more information, see the
 [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)
 or contact [opencode@microsoft.com](mailto:opencode@microsoft.com)
 with any additional questions or comments.
+
+## Appendix: Archived Azure AD B2C scenario
+
+Azure AD B2C support has been removed from the active Django sample and is no longer maintained. The last version remains available for reference in the [`django-web-app`](https://github.com/bgavrilMS/ms-identity-docs-code-python/tree/archive/azure-ad-b2c/django-web-app) directory on the `archive/azure-ad-b2c` branch. The Microsoft Entra External ID scenarios documented above remain supported.
